@@ -55,13 +55,20 @@ carousel-indicators .active {
 
 body
 {
-background-image:url("resources/images/bg.jpg");
+background-color:powderblue;
 height: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	
 	padding:60px;
+
+}
+
+.thumbnail
+{
+height:300px;
+width:300px;
 
 }
 
@@ -124,7 +131,7 @@ height: 100%;
 					
 					<c:if test="${!sessionScope.loggedin}">
 					
-					<li><a href="${pageContext.request.contextPath}/cart"><span class="glyphicon glyphicon-shopping-cart">cart</span>
+					<li><a href="${pageContext.request.contextPath}/cart"><span class="glyphicon glyphicon-shopping-cart"></span>
 				</a></li>
 			
 					
@@ -182,24 +189,24 @@ height: 100%;
 	
 	
 	<div class="row">
-  <div class="col-md-4">
+  <div class="col-md-3">
     <div class="thumbnail">
       <a href="resources/images/bag1.jpg">
-        <img src="resources/images/bag1.jpg" alt="Lights" style="width:100%" >
+        <img src="resources/images/imge.jpg"  class="img-rounded" alt="Lights" style="width:100%" >
         <div class="caption">
-        <h3 align="center"><b>SHOP BAGS</b></h3>
+        <h3 align="center"><b>SHOP DRESS</b></h3>
         <p align="center"> Starting @ Rs999/- </p>
           
         </div>
       </a>
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-3">
     <div class="thumbnail">
      <a href="resources/images/imge.jpg">
-        <img src="resources/images/imge.jpg" alt="Nature" style="width:100%">
+        <img src="resources/images/bag1.jpg"  class="img-circle" alt="Nature" style="width:100%">
         <div class="caption">
-        <h3 align="center"><b>SHOP DRESS</b></h3>
+        <h3 align="center"><b>SHOP BAGS</b></h3>
         <p align="center"> Starting @ Rs1999/- </p>
         
          
@@ -207,12 +214,25 @@ height: 100%;
       </a>
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-3">
     <div class="thumbnail">
      <a href="resources/images/footwear.jpg">
-        <img src="resources/images/footwear.jpg" alt="Fjords" style="width:100%">
+        <img src="resources/images/footwear.jpg"  class="img-rounded" alt="Fjords" style="width:100%">
         <div class="caption">
         <h3 align="center"><b>SHOP FOOTWEAR</b></h3>
+        <p align="center"> Starting @ Rs499/- </p>
+     												    
+        </div>
+      </a>
+    </div>
+  </div>
+  
+  <div class="col-md-3">
+    <div class="thumbnail">
+     <a href="resources/images/rings.jpg">
+        <img src="resources/images/rings.jpg"  class="img-circle" alt="Fjords" style="width:100%;height:100%;">
+        <div class="caption">
+        <h3 align="center"><b>SHOP JEWELLERY</b></h3>
         <p align="center"> Starting @ Rs499/- </p>
      												    
         </div>

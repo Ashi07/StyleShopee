@@ -54,6 +54,7 @@ public class ProductController {
 		
 	}
 	
+	
 	@RequestMapping(value="/totalProductInfo/{productId}")
 	public String TotalProductDisplay(@PathVariable("productId") int productId,Model m)
 	{
@@ -62,6 +63,10 @@ public class ProductController {
 		m.addAttribute("categoryname", categoryDao.getCategory(product.getCategoryId()).getCategoryName());
 		return "totalProductDisplay";
 	}
+	
+	
+	
+	
 
 	@RequestMapping(value = "/InsertProduct", method = RequestMethod.POST)
 	public  String InsertProduct(@RequestParam("productName") String productName,

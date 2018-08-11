@@ -21,80 +21,74 @@
 </head>
 <style>
 body {
-	background-image: url("resources/images/bg.jpg");
+	background-color: powderblue;
 	height: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
-.form 
-{
-    left-align:100px;
+.form {
+	left-align: 100px;
 	background-color: rgba(0, 0, 0, 0.00);
 }
 </style>
 
 <body>
 
-		<h1>SIGN-UP</h1>
-	<div class="form">
-		<form class="form-horizontal"
-			action="perform_registeration" method="post">
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="name">Name:</label>
-				<div class="col-sm-5">
-					<input type="text" class="form-control" id="name" name="name"
-						placeholder="Enter username">
-				</div>
-			</div>
+	<div class="container">
+		<div class="form">
+			<form action="perform_registeration" method="post">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-4 col-sm-offset-4 col-lg-4 col-lg-offset-4">
+							<div class="box">
 
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="Password">Password:</label>
-				<div class="col-sm-5">
-					<input type="password" class="form-control" id="password" name="password"
-						placeholder="Enter password">
-				</div>
-			</div>
+								<h2>Sign-Up</h2>
+								<div class="input-group">
 
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="emailId">Email:</label>
-				<div class="col-sm-5">
-					<input type="text" class="form-control" id="emailId" name="emailId"
-						placeholder="Enter EmailID">
-				</div>
-			</div>
+									<input id="name" type="text" class="form-control" name="name"
+										placeholder="Username" required />
+								</div>
+								<div class="input-group">
+									<br> <input id="password" type="text" class="form-control"
+										name="password" placeholder="Password" required />
+								</div>
+								<br>
+								<div class="input-group">
 
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="mobileNo">MobileNo:</label>
-				<div class="col-sm-5">
-					<input type="text" class="form-control" id="mobileNo" name="mobileNo"
-						placeholder="Enter Mobile No.">
-				</div>
-			</div>
+									<input id="emailId" type="email" class="form-control"
+										name="emailId" placeholder="EmailId" required />
+								</div>
+								<br>
 
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="Enabled">Enabled:</label>
-				<div class="col-sm-5">
-					<input type="text" class="form-control" id="enabled" name="enabled"
-						placeholder="Enter enabled">
-				</div>
-			</div>
+								<div class="input-group">
 
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="role">Role:</label>
-				<div class="col-sm-5">
-					<input type="text" class="form-control" id="role" name="role"
-						placeholder="Enter role">
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-default">Submit</button>
-				</div>
-			</div>
+									<input id="mobileNo" type="text" class="form-control"
+										name="mobileNo" placeholder="MobileNo" required />
+								</div>
+								<br>
 
-		</form>
+								<div class="input-group">
+
+									<input id="enabled" type="text" class="form-control"
+										name="enabled" placeholder="Enabled" required />
+								</div>
+								<br>
+
+
+								<div class="input-group">
+
+									<input id="role" type="text" class="form-control" name="role"
+										placeholder="Role" required />
+								</div>
+								<button type="submit" class="btn btn-success">Submit</button>
+								<br> <br>
+								<p>
+									Already a member? <a href="login">Login Here</a>
+								</p>
+			</form>
+		</div>
 	</div>
 
 

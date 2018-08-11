@@ -20,7 +20,7 @@ padding-top: 90px;
 
 <tr>
 <td rowspan="15">
-<img src="<c:url value="/resources/images/${product.code}.jpg"/>"width="600" height="300"/>
+<img src="<c:url value="/resources/images/${product.code}.jpg"/>"width="400" height="300"/>
 </td>
 </tr>
 

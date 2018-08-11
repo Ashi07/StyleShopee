@@ -25,7 +25,7 @@ padding-top: 70px;
 				<td>Price</td>
 				<td>Quantity</td>
 				<td>TotalPrice</td>
-				<td>Operation</td>
+				
 			</tr>
 		<c:if test="${empty cartItems}">
 		<tr><td colspan="6"><center><h3>Your Cart Is Empty!!</h3></center></td></tr>
@@ -42,10 +42,7 @@ padding-top: 70px;
 					<td>${cartItem.price}</td>
 					<td><input type="text" name="quantity" value="${cartItem.quantity}" /></td>
 					<td>${cartItem.quantity*cartItem.price}</td>
-					<td><input type="submit" value="update" class="btn btn-info" />
-						<a
-						href="<c:url value='/deleteCartFrame/${cartItem.cartItemId}'/>" class="
-						btn btn-danger">Delete</a></td>
+					
 				</tr>
 				</form>
 

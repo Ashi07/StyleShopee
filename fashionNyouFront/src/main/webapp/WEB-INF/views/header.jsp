@@ -23,7 +23,7 @@
 
 body
 {
-background-image:url("${pageContext.request.contextPath}/resources/images/bg.jpg");
+background-color:powderblue;
 height: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -83,7 +83,7 @@ padding-top: 70px;
 					<c:if test="${sessionScope.loggedin}">
 					<c:if test="${sessionScope.role=='ROLE_USER'}">
 					
-					<li><a href="${pageContext.request.contextPath}/cart"><span class="glyphicon glyphicon-shopping-cart">cart</span>
+					<li><a href="${pageContext.request.contextPath}/cart"><span class="glyphicon glyphicon-shopping-cart"></span>
 				</a></li>
 					</c:if>
 					</c:if>

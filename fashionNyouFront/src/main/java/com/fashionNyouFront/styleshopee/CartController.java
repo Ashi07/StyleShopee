@@ -43,6 +43,8 @@ public class CartController
 	
 	
 	
+	
+	
     @RequestMapping(value="/ADD TO CART/{productId}")
 	public String addCartItem(@RequestParam("quantity") int quantity,@PathVariable("productId") int productId,HttpSession session,Model m)
 	{
@@ -71,6 +73,7 @@ public class CartController
     	return "redirect:/cart";
 	}
     
+   
     @RequestMapping(value="/updateCartItem/{cartItemId}")
     public String UpdateCartItem(@RequestParam("quantity") int quantity,@PathVariable("cartItemId") int cartItemId,HttpSession session,Model m)
     {
