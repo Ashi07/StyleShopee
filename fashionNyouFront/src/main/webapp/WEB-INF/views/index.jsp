@@ -18,7 +18,8 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	 <link rel="stylesheet" href="resources/css/all.css"></link> 
 	
 
 
@@ -28,14 +29,12 @@
 <style>
 
 .carousel 
-
 {
-width =100%;
-height =5%;
-position =sticky-top;
-background-color: rgba(0, 0, 0, 0.00);
-}
 
+    width =100%;height =25%;position =sticky-top;
+	
+	background-color: rgba(0, 0, 0, 0.00);
+}
 .navbar-default
 {
 background-color: rgba(0, 0, 0, 0.00);
@@ -53,25 +52,137 @@ carousel-indicators .active {
 	border-color: black;
 }
 
-body
-{
-background-color:powderblue;
-height: 100%;
+body {
+	background-image: url("resources/images/c.jpg");
+	width: 100%;
+	height: 400%;
+	min-height: 100%;
+	min-width: 1024px;
+	/* Set up proportionate scaling */
+	/* Set up positioning */
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	/* Center and scale the image nicely */
 	background-position: center;
+	background-attachment: scroll;
 	background-repeat: no-repeat;
 	background-size: cover;
-	
-	padding:60px;
-
+	position: relative;
+	content: "";
+	z-index: -5000;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
-.thumbnail
+
+.thumbnail {
+	border: none;
+	background: none;
+	height: 300px;
+	width: 300px;
+	padding-left:15px;
+	padding-right:15px;
+}
+
+.flip-card {
+  background-color: transparent;
+  margin-left:80px;
+  width: 350px;
+  height: 400px;
+  perspective: 1000px;
+  
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  z-index: 2;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: black;
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.slider
 {
-height:300px;
-width:300px;
-
+margin-top:-450px;
+margin-left:600px;
+padding-right:0px;
 }
 
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.container2 {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
 
 
 
@@ -89,22 +200,23 @@ width:300px;
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="home">home</a></li>
 				<c:if test="${!sessionScope.loggedin}">
-				<li><a href="aboutUs">aboutUs</a></li>
-				<li><a href="contactUs">contact Us</a></li>
-				<li><a href="login">login</a></li>
+				<li><a href="${pageContext.request.contextPath}/aboutUs">aboutUs</a></li>
+				<li><a href="${pageContext.request.contextPath}/contactUs">contact Us</a></li>
+				<li><a href="${pageContext.request.contextPath}/login">login</a></li>
 				<li><a href="registeration">registeration</a></li>
 				
 				</c:if>
 				<c:if test="${sessionScope.loggedin}">
 				<c:if test="${sessionScope.role=='ROLE_ADMIN'}">
-				<li><a href="supplier">supplier</a></li>
-				<li><a href="category">category</a></li>
-				<li><a href="Product">Product</a></li>
+				<li><a href="${pageContext.request.contextPath}/admin">Admin_Home</a></li>
+				<li><a href="${pageContext.request.contextPath}/supplier">supplier</a></li>
+				<li><a href="${pageContext.request.contextPath}/category">category</a></li>
+				<li><a href="${pageContext.request.contextPath}/Product">Product</a></li>
 			
 				</c:if>
 				
 				<c:if test="${sessionScope.role=='ROLE_USER'}">
-				<li><a href="productDisplay">productDisplay
+				<li><a href="${pageContext.request.contextPath}/productDisplay">productDisplay
 				</a></li>
 				
 				</c:if>
@@ -142,7 +254,9 @@ width:300px;
 				
 				</nav>
 
-
+<br>
+<br>
+<br>
 <div class="container">
 
 		<div id="myCarousel" class="carousel slide jumbotron"
@@ -240,7 +354,97 @@ width:300px;
     </div>
   </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 	
+	<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="resources/images/bagss.jpg" alt="Avatar" style="width:350px;height:400px;">
+    </div>
+    <div class="flip-card-back">
+      <img src="resources/images/50.jpg" alt="Avatar" style="width:350px;height:400px;">
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<div class="slider">
+<div class="w3-content w3-section" style="max-width:400px">
+ 
+  <img class="mySlides w3-animate-fading" src="resources/images/foot.jpg" style="width:150%;height:20%; ">
+  <img class="mySlides w3-animate-fading" src="resources/images/f2.jpg" style="width:150%;height:20%; ">
+  <img class="mySlides w3-animate-fading" src="resources/images/f3.jpg" style="width:150%;height:20%; ">
+  <img class="mySlides w3-animate-fading" src="resources/images/f4.jpg" style="width:150%;height:20%; ">
+</div>
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 9000);    
+}
+</script>
+<br>
+<br>
+<br>
+<br>
+
+<div style="text-align:center">
+  <h2> Image Gallery</h2>
+  <p>Click on the images below to zoom it:</p>
+</div>
+
+<!-- The four columns -->
+<div class="row">
+  <div class="column">
+    <img src="resources/images/i1.jpg" alt="Nature" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="resources/images/i2.png" alt="Snow" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="resources/images/i3.jpg" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="resources/images/i4.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+  </div>
+ 
+</div>
+
+<div class="container2">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+</script>
 
 
 

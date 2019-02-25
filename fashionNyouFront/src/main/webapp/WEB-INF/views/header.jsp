@@ -1,5 +1,3 @@
-
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
@@ -17,10 +15,9 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/carousel.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+ <link rel="stylesheet" href="resources/css/all.css"></link> 
 
 <style>
-
 body
 {
 background-color:powderblue;
@@ -29,15 +26,7 @@ height: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;
 padding-top: 70px;
-
 }
-
-
-
-
-
-
-
 </style>
 
 
@@ -54,11 +43,12 @@ padding-top: 70px;
 				<li><a href="aboutUs">aboutUs</a></li>
 				<li><a href="contactUs">contact Us</a></li>
 				<li><a href="login">login</a></li>
-				<li><a href="registeration">registeration</a></li>
+				<li><a href="registeration">Sign-Up</a></li>
 				
 				</c:if>
 				<c:if test="${sessionScope.loggedin}">
 				<c:if test="${sessionScope.role=='ROLE_ADMIN'}">
+				<li><a href="${pageContext.request.contextPath}/admin">Admin_Home</a></li>
 				<li><a href="supplier">supplier</a></li>
 				<li><a href="category">category</a></li>
 				<li><a href="Product">Product</a></li>
@@ -77,7 +67,7 @@ padding-top: 70px;
 				
 				<div class="nav navbar-nav navbar-right">
 					<c:if test="${sessionScope.loggedin}">	
-					<li><font color="midnightblue" face="calibri" size="3">Welcome :${username}</font>	</li>			
+					<li><a><font color="midnightblue" face="calibri" size="3">Welcome : ${username}</font></a>	</li>			
 					<li><a href="logout">logout</a></li>
 					</c:if>
 					<c:if test="${sessionScope.loggedin}">

@@ -1,18 +1,59 @@
-<%@ include file="header.jsp" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+     <%@ include file="header.jsp"%>
+ 
+
 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <style>
-
-.heading
-{
-margin-top:50px;
-
+ body {
+	background-image: url("${pageContext.request.contextPath}/resources/images/c.jpg");
+	width: 100%;
+	height: 400%;
+	min-height: 100%;
+	min-width: 1024px;
+	/* Set up proportionate scaling */
+	/* Set up positioning */
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	
+	background-position: center;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	content: "";
+	z-index: -5000;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
 
+th, td {
+  text-align: left;
+  padding: 16px;
+}
 
-</style>
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+.h1
+{
+text-shadow: 1px 1px black;
+}
+     
+     </style>
+ 
 <center>
 <div class="heading">
 <h1>Product</h1>
@@ -25,39 +66,39 @@ margin-top:50px;
 			<table>
 
 				<tr bgcolor="pink">
-					<td>ProductId</td>
+					<td><b>ProductId</b></td>
 					<td><input type="text" name="productId" value="${productData.productId}" readonly /></td>
 				</tr>
 
 				<tr>
-					<td>ProductName</td>
+					<td><b>ProductName</b></td>
 					<td><input type="text" name="productName"  value="${productData.productName}"/></td>
 				</tr>
 
 				<tr>
-					<td>ProductDescription</td>
+					<td><b>ProductDescription</b></td>
 					<td><input type="text" name="productDesc" value="${productData.productDesc}"/> </td>
 				</tr>
 
 				<tr>
-					<td>Price</td>
+					<td><b>Price</b></td>
 					<td><input type="text" name="price"  value="${productData.price}"/></td>
 
 				</tr>
 
 
 				<tr>
-					<td>Stock</td>
+					<td><b>Stock</b></td>
 					<td><input type="text" name="stock" value="${productData.stock}" /></td>
 				</tr>
 
 				<tr>
-					<td>CategoryId</td>
+					<td><b>CategoryId</b></td>
 					<td><input type="text" name="categoryId" value="${productData.categoryId}" /></td>
 				</tr>
 
 				<tr>
-					<td>SupplierId</td>
+					<td><b>SupplierId</b></td>
 					<td><input type="text" name="supplierId"  value="${productData.supplierId}"/></td>
 				</tr>
 				
@@ -83,39 +124,67 @@ margin-top:50px;
 			<table>
 
 				<tr>
-					<td>ProductName</td>
+					<td><b>ProductName</b></td>
 					<td><input type="text" name="productName" /></td>
 				</tr>
 
 				<tr>
-					<td>ProductDescription</td>
+					<td><b>ProductDescription</b></td>
 					<td><input type="text" name="productDesc"></td>
 				</tr>
 
 				<tr>
-					<td>Price</td>
+					<td><b>Price</b></td>
 					<td><input type="text" name="price" /></td>
 
 				</tr>
 
 
 				<tr>
-					<td>Stock</td>
+					<td><b>Stock</b></td>
 					<td><input type="text" name="stock" /></td>
-				</tr>
-
-				<tr>
-					<td>CategoryId</td>
-					<td><input type="text" name="categoryId" /></td>
-				</tr>
-
-				<tr>
-					<td>SupplierId</td>
-					<td><input type="text" name="supplierId" /></td>
 				</tr>
 				
 				<tr>
-					<td>Image<input type="file" name="file"></td>
+					<td><b>Category</b></td>
+					<td><input type="text" name="categoryId" /></td>
+				</tr>
+				
+				
+				<tr>
+					<td><b>Supplier</b></td>
+					<td><input type="text" name="supplierId" /></td>
+				</tr>
+				
+				
+
+				<%-- <tr>
+					<td><b>Category</b></td>
+					
+					<td><select name="categoryId">
+						<option value="0">-------Select------</option>
+						<c:forEach items="${categorylist}" var="category">
+							<option value="${category.categoryId}">${category.categoryName}</option>
+						</c:forEach>
+
+				</select></td>
+				</tr> --%>
+
+				<%-- <tr>
+					<td><b>SupplierId</b></td>
+					<td><select name="suppierId">
+						<option value="0">-------Select------</option>
+						<c:forEach items="${supplierlist}" var="supplier">
+							<option value="${supplier.supplierId}">${supplier.supplierName}</option>
+						</c:forEach>
+
+				</select></td>
+				</tr> --%>
+				
+				
+				
+				<tr>
+					<td><b>Image<input type="file" name="file"></b></td>
 				</tr>
 				 
 
@@ -134,14 +203,14 @@ margin-top:50px;
 
 	<tr bgcolor="pink">
 	    <!--  <td>Image</td>  -->
-		<td>ProductId</td>
-		<td>ProductName</td>
-		<td>ProductDesc</td>
-		<td>Price</td>
-		<td>Stock</td>
-		<td>SupplierId</td>
-		<td>CategoryId</td>
-		<td>Action</td>
+		<td><b>ProductId</b></td>
+		<td><b>ProductName</b></td>
+		<td><b>ProductDesc</b></td>
+		<td><b>Price</b></td>
+		<td><b>Stock</b></td>
+		<td><b>SupplierId</b></td>
+		<td><b>CategoryId</b></td>
+		<td><b>Action</b></td>
     </tr>
 
 	<c:forEach items="${productlist}" var="product">
@@ -157,9 +226,9 @@ margin-top:50px;
 			
 			<td><a
 				href="<c:url value='/deleteproduct/${product.productId}'/>">
-					Delete </a> <a
+					<span class="glyphicon glyphicon-remove"></span> </a> <a
 				href="<c:url value='/editproduct/${product.productId}'/>">
-					edit </a></td>
+					<span class="glyphicon glyphicon-edit"></span> </a></td>
 		</tr>
 	</c:forEach>
 

@@ -1,98 +1,153 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
-
-
-<html>
-<head>
-<title>Home</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<link rel="stylesheet" href="resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="resources/css/bootstrap-theme.css">
-
-
-</head>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+     <%@ include file="header.jsp"%>
+ 
+         
+         
 <style>
-body {
-	background-color: powderblue;
-	height: 100%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+body
+{
+ background-image: url("resources/images/c.jpg");
+
+  min-height: 150%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
 }
 
-.form {
-	left-align: 100px;
-	background-color: rgba(0, 0, 0, 0.00);
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
 }
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container1 {
+  padding: 16px;
+  margin-top:40px;
+  margin-right:180px;
+  height:800px;
+  width:500px;
+  
+  
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+h1{
+
+text-shadow:2px 2px black;
+}
+
+.box
+{
+margin-bottom:80px;
+margin-left:450px;
+}
+
+
 </style>
-
+</head>
 <body>
 
-	<div class="container">
-		<div class="form">
-			<form action="perform_registeration" method="post">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-4 col-sm-offset-4 col-lg-4 col-lg-offset-4">
-							<div class="box">
+<br>
+<br>
+<br>
+<br>
+<h1><center>Sign-Up</center></h1>
+<div class="box">
+  <form action="perform_registeration"  method="post" >
+  <div class="container1">
 
-								<h2>Sign-Up</h2>
-								<div class="input-group">
+ 
+    
+     <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" required>
 
-									<input id="name" type="text" class="form-control" name="name"
-										placeholder="Username" required />
-								</div>
-								<div class="input-group">
-									<br> <input id="password" type="text" class="form-control"
-										name="password" placeholder="Password" required />
-								</div>
-								<br>
-								<div class="input-group">
+    <label for="emailId"><b>EmailId</b></label>
+    <input type="text" placeholder="Enter EmaiId" name="emailId" required>
 
-									<input id="emailId" type="email" class="form-control"
-										name="emailId" placeholder="EmailId" required />
-								</div>
-								<br>
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+    
+     <label for="mobileNo"><b>MobileNo</b></label>
+    <input type="text" placeholder="Enter MobileNo" name="mobileNo" required>
+    
+     <label for="enabled"><b>Enabled/Diasabled</b></label>
+    <input type="text" placeholder="Enabled or Not?" name="enabled" required>
+     
+     
+     <label for="role"><b>Role</b></label>
+    <input type="text" placeholder="User/Admin" name="role" required>
+    
+    <label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label>
+    
+    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+<div class="clearfix">
+    <button type="submit" class="btn">Sign-Up</button>
+    <p1>Already a member?<a href="login" style="color:dodgerblue">Sign-In</a></p1>
+    </div>
+      </div>
+  </form>
+</div>
 
-								<div class="input-group">
-
-									<input id="mobileNo" type="text" class="form-control"
-										name="mobileNo" placeholder="MobileNo" required />
-								</div>
-								<br>
-
-								<div class="input-group">
-
-									<input id="enabled" type="text" class="form-control"
-										name="enabled" placeholder="Enabled" required />
-								</div>
-								<br>
-
-
-								<div class="input-group">
-
-									<input id="role" type="text" class="form-control" name="role"
-										placeholder="Role" required />
-								</div>
-								<button type="submit" class="btn btn-success">Submit</button>
-								<br> <br>
-								<p>
-									Already a member? <a href="login">Login Here</a>
-								</p>
-			</form>
-		</div>
-	</div>
-
-
-
+<%@ include file="footer.jsp" %>
 
 </body>
-</html>
+

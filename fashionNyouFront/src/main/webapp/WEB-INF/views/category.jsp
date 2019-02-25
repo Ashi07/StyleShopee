@@ -1,25 +1,58 @@
-<%@ include file="header.jsp" %>
+
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+  <%@ include file="header.jsp"%>
 
-<style>
-body
-{
-padding-top: 70px;
-
-background-image:url("${pageContext.request.contextPath}/resources/images/bg.jpg");
-height: 100%;
+ <style>
+     
+     body {
+	background-image: url("${pageContext.request.contextPath}/resources/images/c.jpg");
+	width: 100%;
+	height: 400%;
+	min-height: 100%;
+	min-width: 1024px;
+	/* Set up proportionate scaling */
+	/* Set up positioning */
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	/* Center and scale the image nicely */
 	background-position: center;
+	background-attachment: scroll;
 	background-repeat: no-repeat;
 	background-size: cover;
-
-
-
+	position: relative;
+	content: "";
+	z-index: -5000;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
 
-</style>
+th, td {
+  text-align: left;
+  padding: 16px;
+}
 
-<h1>Category</h1>
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+.h1
+{
+text-shadow: 1px 1px black;
+}
+     
+     </style>
+
+<body>
+
+<h1><center>Category</center></h1>
 
 
 <c:if test="${flag}">
@@ -28,21 +61,21 @@ height: 100%;
 
 			<table>
 				<tr>
-					<td>CategoryId</td>
+					<td><b>CategoryId</b></td>
 					<td><input type="text" name="categoryId"
 						value="${categoryData.categoryId}" readonly /></td>
 
 				</tr>
 
 				<tr>
-					<td>CategoryName</td>
+					<td><b>CategoryName</b></td>
 					<td><input type="text" name="categoryName"
 						value="${categoryData.categoryName}" /></td>
 
 				</tr>
 
 				<tr>
-					<td>CategoryType</td>
+					<td><b>CategoryType</b></td>
 					<td><input type="text" name="categoryType"
 						value="${categoryData.categoryType}"></td>
 				</tr>
@@ -64,12 +97,12 @@ height: 100%;
 			<table>
 
 				<tr>
-					<td>CategoryName</td>
+					<td><b>CategoryName</b></td>
 					<td><input type="text" name="categoryName" /></td>
 				</tr>
 
 				<tr>
-					<td>CategoryType</td>
+					<td><b>CategoryType</b></td>
 					<td><input type="text" name="categoryType"></td>
 				</tr>
 
@@ -91,10 +124,10 @@ height: 100%;
 <table class="table-bordered" align="center" width="100%" height="100%">
 <thead>
 	<tr bgcolor="pink">
-		<td>CategoryId</td>
-		<td>CategoryName</td>
-		<td>CategoryType</td>
-		<td>Action</td>
+		<td><b>CategoryId</b></td>
+		<td><b>CategoryName</b></td>
+		<td><b>CategoryType</b></td>
+		<td><b>Action</b></td>
 		
 
 	</tr>
@@ -106,11 +139,11 @@ height: 100%;
 			<td>${category.categoryName}</td>
 			<td>${category.categoryType}</td>
 
-			<td><a
+			<td><button><a
 				href="<c:url value='/deletecategory/${category.categoryId}'/>">
-					Delete </a> <a
+					 <span class="glyphicon glyphicon-remove"></span> </a></button><button> <a
 				href="<c:url value='/editcategory/${category.categoryId}'/>">
-					edit </a></td>
+					 <span class="glyphicon glyphicon-edit"></span> </a></button></td>
 		</tr>
 
 	</c:forEach>
@@ -124,6 +157,6 @@ height: 100%;
 
 
 
-
+</body>
 
 </html>
