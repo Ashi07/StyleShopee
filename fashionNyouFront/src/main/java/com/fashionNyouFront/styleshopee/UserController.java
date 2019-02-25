@@ -35,7 +35,7 @@ public class UserController
 		for(GrantedAuthority role:roles)
 		{
 			session.setAttribute("role",role.getAuthority());
-			if(role.getAuthority().equals("ROLE_USER"))
+			if(role.getAuthority().equals("ROLE_USER"+ ""))
 			{
 				loggedin=true;
 				page="productDisplay";

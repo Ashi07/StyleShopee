@@ -36,7 +36,7 @@ public class ProductController {
 
 	@RequestMapping(value ="/Product")
 	public String ShowProduct(Model m) {
-		flag=false;
+		
 		List<Product> listProducts = productDao.listall();
 		m.addAttribute("productlist", listProducts);
 		m.addAttribute("flag", flag);
@@ -74,7 +74,7 @@ public class ProductController {
 			@RequestParam("stock") int stock, @RequestParam("categoryId") int categoryId,
 		@RequestParam("supplierId") int supplierId,@RequestParam("file") MultipartFile file, Model m)
 	{
-		 flag=false;
+	
 		 Product product=new Product();
 		
 	
@@ -86,7 +86,7 @@ public class ProductController {
 	    product.setSupplierId(supplierId);
 		product.setStock(stock);
 		
-		String path="C:\\Users\\singh\\eclipse-workspace\\fashionNyouFront\\src\\main\\webapp\\resources\\images\\";
+		String path="C:\\Users\\admin\\eclipse-workspace2\\fashionNyouFront\\src\\main\\webapp\\resources\\images\\";
 		 path=path+product.getCode()+".jpg";
 		 File f=new File(path);
 		 

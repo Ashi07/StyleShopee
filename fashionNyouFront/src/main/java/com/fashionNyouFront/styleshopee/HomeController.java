@@ -42,17 +42,22 @@ public class HomeController {
 
 	@RequestMapping(value = "/aboutUs")
 	public String aboutUs() {
-		return "AboutUs";
+		return "aboutus";
 	}
 
 	@RequestMapping(value = "/contactUs")
 	public String contactUs() {
-		return "ContactUs";
+		return "contactus";
 	}
 	
 	@RequestMapping(value = "/registeration")
 	public String Registeration() {
 		return "registeration";
+	}
+
+	@RequestMapping(value = "/admin")
+	public String Admin_home() {
+		return "admin";
 	}
 
 }

@@ -24,7 +24,7 @@ public class SupplierController
 	@RequestMapping(value="/supplier")
 	public String showSupplier(Model m)
 	{
-		flag=false;
+		
 		List<Supplier> listSupplier=supplierDao.getall();
 		m.addAttribute("supplierlist", listSupplier);
 		

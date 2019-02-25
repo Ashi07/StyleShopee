@@ -40,7 +40,7 @@ public class CategoryController
 	@RequestMapping(value="/InsertCategory",method=RequestMethod.POST)
 	public String InsertCategory(@RequestParam("categoryName")String categoryName,@RequestParam("categoryType")String categoryType,Model m)
 	{	
-	   flag =false;
+	
 		
 		Category category=new Category();
 		
@@ -84,7 +84,7 @@ public class CategoryController
 	@RequestMapping(value="/UpdateCategory",method=RequestMethod.POST)
 	public String UpdateCategory(@RequestParam("categoryId")int categoryId,@RequestParam("categoryName")String categoryName,@RequestParam("categoryType")String categoryType,Model m)
 	{	
-	   flag =false;
+
 		
 		Category category=categoryDao.getCategory(categoryId);
 		
