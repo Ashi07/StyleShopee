@@ -9,7 +9,7 @@
 	http://www.springframework.org/schema/security/spring-security.xsd">
 
 		<security:http use-expressions="true"  auto-config="true">
-		 <security:intercept-url pattern="/manageproducts**" access="hasRole('USER_ROLE')" /> 
+		 <security:intercept-url pattern="/manageproducts**" access="hasRole('ROLE_USER')" /> 
 		
 		<!-- access denied page -->
 		<security:access-denied-handler error-page="/403" />
